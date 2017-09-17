@@ -15,6 +15,7 @@
 		49D56D771F6D388400887FCA /* HittestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D56D761F6D388400887FCA /* HittestView.swift */; };
 		49D56D791F6D6BFC00887FCA /* qiuqiu.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 49D56D781F6D6BFC00887FCA /* qiuqiu.jpeg */; };
 		49D56D7B1F6D6C1300887FCA /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D56D7A1F6D6C1300887FCA /* 12.png */; };
+		49D56D7E1F6E022300887FCA /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D56D7D1F6E022300887FCA /* ThreadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		49D56D761F6D388400887FCA /* HittestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HittestView.swift; sourceTree = "<group>"; };
 		49D56D781F6D6BFC00887FCA /* qiuqiu.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qiuqiu.jpeg; sourceTree = "<group>"; };
 		49D56D7A1F6D6C1300887FCA /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
+		49D56D7D1F6E022300887FCA /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				49355C821F6D15F0009D2F3F /* AppDelegate.swift */,
 				49355C961F6D2093009D2F3F /* RootViewController.swift */,
+				49D56D7C1F6E01EF00887FCA /* Thread */,
 				49D56D731F6D36D200887FCA /* Hittest */,
 				49355C891F6D15F0009D2F3F /* Assets.xcassets */,
 				49D56D7A1F6D6C1300887FCA /* 12.png */,
@@ -79,6 +82,14 @@
 				49D56D761F6D388400887FCA /* HittestView.swift */,
 			);
 			name = Hittest;
+			sourceTree = "<group>";
+		};
+		49D56D7C1F6E01EF00887FCA /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				49D56D7D1F6E022300887FCA /* ThreadViewController.swift */,
+			);
+			name = Thread;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 			files = (
 				49355C951F6D1949009D2F3F /* HittestViewController.swift in Sources */,
 				49355C831F6D15F0009D2F3F /* AppDelegate.swift in Sources */,
+				49D56D7E1F6E022300887FCA /* ThreadViewController.swift in Sources */,
 				49D56D771F6D388400887FCA /* HittestView.swift in Sources */,
 				49D56D751F6D36E900887FCA /* MoveButton.swift in Sources */,
 				49355C971F6D2093009D2F3F /* RootViewController.swift in Sources */,

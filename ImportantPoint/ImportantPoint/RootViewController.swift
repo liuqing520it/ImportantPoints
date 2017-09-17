@@ -47,7 +47,7 @@ class RootViewController: UIViewController {
             navigationController?.pushViewController(HittestViewController(), animated: true)
         }
         else{
-            
+            navigationController?.pushViewController(ThreadViewController(), animated: true)
         }
         
     }

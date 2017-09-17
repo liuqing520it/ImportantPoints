@@ -29,26 +29,18 @@ class HittestViewController: UIViewController {
         moveButton.addTarget(self, action: #selector(btnClick(sender:)), for: .touchUpInside)
     }
     
+    
     func btnClick(sender:UIButton){
         
-        let btn = UIButton(type: .custom)
-        let path = Bundle.main.path(forResource: "12.png", ofType: nil)
-        let imageN = UIImage(contentsOfFile: path!)
-        let pathHighlighted = Bundle.main.path(forResource: "qiuqiu.jpeg", ofType: nil)
-        let imageH = UIImage(contentsOfFile: pathHighlighted!)
-        btn.setImage(imageN, for: .normal)
-        btn.setImage(imageH, for: .highlighted)
-
-        btn.frame = CGRect(x: 0, y: moveButton.frame.height, width: 200, height: 200)
+        sender.isSelected = !sender.isSelected
         
-        moveButton.childButton = btn
+        moveButton.childButton.isHidden = !sender.isSelected
         
-        sender.addSubview(btn)
     }
     
     //MARK: - 懒加载
     private lazy var moveButton : MoveButton = {
-        let btn = MoveButton(type: .custom)
+        let btn = MoveButton()
         btn.setTitleColor(UIColor.brown, for: .normal)
         btn.setTitle("点我拖动", for: .normal)
         btn.backgroundColor = UIColor.red

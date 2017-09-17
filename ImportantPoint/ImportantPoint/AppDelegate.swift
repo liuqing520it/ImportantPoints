@@ -32,8 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+
+
 //全局变量
 //随机色
 let randomColor = UIColor(red:CGFloat(arc4random()%255) / 255.0, green: CGFloat(arc4random()%255) / 255.0, blue: CGFloat(arc4random()%255) / 255.0, alpha: 1.0)
 
 
+
+func printCtm <T> (_ message : T ,fileName : String = #file ,methodName:String = #function ,lineString : Int = #line)  {
+    let file = (fileName as NSString).pathComponents.last?.components(separatedBy: ".").first
+    print("\(file ?? ""):\(methodName)[\(lineString)]:\(message)")
+}
