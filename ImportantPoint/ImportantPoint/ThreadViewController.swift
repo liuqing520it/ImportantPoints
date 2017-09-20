@@ -97,16 +97,15 @@ class ThreadViewController: UIViewController {
     
     //MARK: - 使用GCD的第二种方法
     private func gcdGroup2(){
-        
         //创建组
         let group = DispatchGroup()
         //创建队列
         let globalQueue = DispatchQueue.global()
-        
         //下载第一张图片
         group.enter()
         
-        globalQueue.async { 
+        globalQueue.async {
+
             guard let url = URL(string: "http://s3.sinaimg.cn/mw690/003CgyILty6SBlnlRvQf2&690") else{
                 return
             }
@@ -125,6 +124,7 @@ class ThreadViewController: UIViewController {
         group.enter()
         
         globalQueue.async {
+            
             guard let url = URL(string: "http://4493bz.1985t.com/uploads/allimg/151219/1-151219104536.jpg") else{
                 return
             }
@@ -144,9 +144,9 @@ class ThreadViewController: UIViewController {
             printCtm(Thread.current)
             //获取图形上下文
             UIGraphicsBeginImageContext(self.showSize)
-            //图片1
+            //下载图片1
             self.image1.draw(in: CGRect(x: 0, y: 0, width: self.showSize.width, height: self.showSize.height * 0.5))
-            //图片2
+            //下载图片2
             self.image2.draw(in: CGRect(x: 0, y: self.showSize.height * 0.5, width: self.showSize.width, height: self.showSize.height * 0.5))
             //通过上下文得到一张图片
             let resultImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -160,9 +160,7 @@ class ThreadViewController: UIViewController {
         }
     }
     
-    
     ///MARK: - 使用NSOpretion
-    
     private func operation(){
         //创建队列 全局队列
         let operaQueue = OperationQueue()

@@ -24,7 +24,7 @@ class RootViewController: UIViewController {
         let originX : CGFloat = 20
         let btnW = UIScreen.main.bounds.size.width - originX * 2
         
-        let titleArray = ["hittest应用","多线程应用"]
+        let titleArray = ["hittest应用","多线程应用","个人中心展示"]
         
         for i in 0..<titleArray.count {
             originY = 84 + (btnH + 20) * CGFloat(i)
@@ -46,10 +46,12 @@ class RootViewController: UIViewController {
         if btn.tag == btnTag{
             navigationController?.pushViewController(HittestViewController(), animated: true)
         }
-        else{
+        else if btn.tag == btnTag + 1{
             navigationController?.pushViewController(ThreadViewController(), animated: true)
         }
-        
+        else if btn.tag == btnTag + 2{
+            navigationController?.pushViewController(ProfileViewController(), animated: true)
+        }
     }
     
 }
