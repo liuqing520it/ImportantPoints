@@ -8,12 +8,18 @@
 
 import UIKit
 
+enum ControllersTag : Int{
+    case hitTestController = 234
+    case threadController
+    case profileController
+}
+
 class RootViewController: UIViewController {
 
-    let btnTag = 328492
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        view.backgroundColor = UIColor.randomColor
         
         addSubView()
     }
@@ -35,7 +41,7 @@ class RootViewController: UIViewController {
             btn.setTitle(titleArray[i], for: .normal)
             btn.setTitleColor(UIColor.red, for: .normal)
             btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-            btn.tag = i + btnTag
+            btn.tag = i + ControllersTag.hitTestController.rawValue
             btn.addTarget(self, action: #selector(btnClick(btn:)), for: .touchUpInside)
             view.addSubview(btn)
         }
@@ -43,13 +49,13 @@ class RootViewController: UIViewController {
     
     @objc private func btnClick(btn : UIButton){
      
-        if btn.tag == btnTag{
+        if btn.tag == ControllersTag.hitTestController.rawValue{
             navigationController?.pushViewController(HittestViewController(), animated: true)
         }
-        else if btn.tag == btnTag + 1{
+        else if btn.tag == ControllersTag.threadController.rawValue{
             navigationController?.pushViewController(ThreadViewController(), animated: true)
         }
-        else if btn.tag == btnTag + 2{
+        else if btn.tag == ControllersTag.profileController.rawValue{
             navigationController?.pushViewController(ProfileViewController(), animated: true)
         }
     }

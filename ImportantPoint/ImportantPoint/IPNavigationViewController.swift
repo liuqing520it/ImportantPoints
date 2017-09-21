@@ -16,10 +16,10 @@ class IPNavigationViewController: UINavigationController {
         super.viewDidLoad()
     }
 
+    ///重写push方法 设置导航栏返回按钮
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        
+
         if childViewControllers.count >= 1 {
-        
             let btn = UIButton(type: .custom)
             btn.setImage(UIImage(named:"commend_back_11x17_"), for: .normal)
             btn.setImage(UIImage(named:"capture_nav_back_highlight_14x17_"), for: .highlighted)
@@ -33,6 +33,7 @@ class IPNavigationViewController: UINavigationController {
         super.pushViewController(viewController, animated: true)
     }
     
+    ///返回 按钮点击 pop
     @objc private func btnClick(){
         popViewController(animated: true)
     }
