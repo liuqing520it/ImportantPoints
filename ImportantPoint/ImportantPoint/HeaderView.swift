@@ -32,7 +32,7 @@ class HeaderView: UIView {
         bgImageView.frame = CGRect(x: 0, y: 0, width:frame.width , height: frame.height)
         avatarImageView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
         avatarImageView.center = center
-        useNameLabel.center = CGPoint(x: avatarImageView.frame.maxY + 20, y: center.y)
+        useNameLabel.center = CGPoint(x:center.x, y: avatarImageView.frame.maxY + 20)
     }
     
     //MARK: - 懒加载
@@ -51,7 +51,7 @@ class HeaderView: UIView {
         let imageV = UIImageView()
         let path = Bundle.main.path(forResource: "12.png", ofType: nil)
         imageV.image = UIImage(contentsOfFile: path!)
-        imageV.layer.cornerRadius = 20
+        imageV.layer.cornerRadius = 40
         imageV.layer.masksToBounds = true
         return imageV
     }()
@@ -59,6 +59,7 @@ class HeaderView: UIView {
     ///用户名
     private lazy var useNameLabel : UILabel = {
        let label = UILabel()
+        label.text = "趁时光还在"
         label.textColor = UIColor.darkGray
         label.font = UIFont.systemFont(ofSize: 15)
         label.sizeToFit()

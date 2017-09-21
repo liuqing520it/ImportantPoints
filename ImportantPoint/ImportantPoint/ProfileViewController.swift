@@ -22,11 +22,11 @@ class ProfileViewController: UIViewController {
         setupUI()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        print(tableView.contentInset)
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        print(tableView.contentInset)
+//    }
     
     //MARK: - 内部控制方法
     
@@ -46,7 +46,7 @@ class ProfileViewController: UIViewController {
     }
     
     //MARK: - 懒加载
-    private lazy var headerView = HeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerViewHeight))
+    fileprivate lazy var headerView = HeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerViewHeight))
     
     private lazy var tableView : UITableView = {
        let tv = UITableView(frame: UIScreen.main.bounds, style: .plain)
@@ -72,12 +72,18 @@ extension ProfileViewController : UITableViewDelegate , UITableViewDataSource{
         
         //1.取出 tableview的内边距
         let contentOffset = scrollView.contentOffset.y
-        
+        //2.取出差值
         let delatOffset  = contentOffset - (-headerViewHeight)
+        //3.计算头部视图的高度
+        var h = headerViewHeight - delatOffset
         
+        if h < navigationStatusBarHeight {
+            h = navigationStatusBarHeight
+        }
+        //4.设置头部视图的高度
+        headerView.frame.size.height = h
         
-        
-        print(delatOffset)
+        print(h)
         
     }
 }

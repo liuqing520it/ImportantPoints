@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+let navigationStatusBarHeight : CGFloat = 64.0
+
 func printCtm <T> (_ message : T ,fileName : String = #file ,methodName:String = #function ,lineString : Int = #line)  {
     let file = (fileName as NSString).pathComponents.last?.components(separatedBy: ".").first
     print("\(file ?? ""):\(methodName)[\(lineString)]:\(message)")

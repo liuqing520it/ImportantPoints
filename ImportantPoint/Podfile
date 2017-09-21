@@ -1,0 +1,9 @@
+platform :ios, '9.0'
+
+target 'ImportantPoint' do
+
+  use_frameworks!
+
+ pod 'SnapKit’
+
+end
