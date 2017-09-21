@@ -31,7 +31,7 @@ class RootViewController: UIViewController {
             
             let btn = UIButton(type: .custom)
             btn.frame = CGRect(x: originX, y: originY, width: btnW, height: btnH)
-            btn.backgroundColor = randomColor;
+            btn.backgroundColor = UIColor.randomColor;
             btn.setTitle(titleArray[i], for: .normal)
             btn.setTitleColor(UIColor.red, for: .normal)
             btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)

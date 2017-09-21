@@ -42,6 +42,7 @@ class HeaderView: UIView {
         let path = Bundle.main.path(forResource: "qiuqiu.jpeg", ofType: nil)
         imageV.image = UIImage(contentsOfFile: path!)
         imageV.contentMode = UIViewContentMode.scaleAspectFill
+        imageV.layer.masksToBounds = true
         return imageV
     }()
     

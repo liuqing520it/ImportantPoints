@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "\(UITableViewCell.self)")
         
-        tableView.contentInset = UIEdgeInsets(top: headerViewHeight + 50, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: headerViewHeight, left: 0, bottom: 0, right: 0)
     }
     
     //MARK: - 懒加载
@@ -64,14 +64,20 @@ extension ProfileViewController : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(UITableViewCell.self)", for: indexPath)
         cell.textLabel?.text = "\(ProfileViewController.self)----\(indexPath.row)"
+        cell.backgroundColor = UIColor.randomColor
         return cell
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        let offset = scrollView.contentOffset.y
+        //1.取出 tableview的内边距
+        let contentOffset = scrollView.contentOffset.y
         
-        print(offset)
+        let delatOffset  = contentOffset - (-headerViewHeight)
+        
+        
+        
+        print(delatOffset)
         
     }
 }
