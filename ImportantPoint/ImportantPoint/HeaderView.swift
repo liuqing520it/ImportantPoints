@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class HeaderView: UIView {
 
@@ -20,21 +21,24 @@ class HeaderView: UIView {
     private func addSubViewAndLayout(){
         
         addSubview(bgImageView)
+        bgImageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
        
         addSubview(avatarImageView)
+        avatarImageView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 80, height: 80))
+            make.bottom.equalToSuperview().offset(-navigationStatusBarHeight)
+        }
         
         addSubview(useNameLabel)
+        useNameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(avatarImageView.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        bgImageView.frame = CGRect(x: 0, y: 0, width:frame.width , height: frame.height)
-        avatarImageView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        avatarImageView.center = center
-        useNameLabel.center = CGPoint(x:center.x, y: avatarImageView.frame.maxY + 20)
-    }
-    
+
     //MARK: - 懒加载
     ///背景图片
     private lazy var bgImageView : UIImageView = {

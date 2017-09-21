@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = UINavigationController(rootViewController: RootViewController())
+        window?.rootViewController = IPNavigationViewController(rootViewController: RootViewController())
         
         //让window显示
         window?.makeKeyAndVisible()

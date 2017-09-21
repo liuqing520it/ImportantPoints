@@ -12,6 +12,16 @@ let headerViewHeight : CGFloat = 200
 
 class ProfileViewController: UIViewController {
 
+    
+    fileprivate lazy var titleLabel : UILabel = {
+        let label = UILabel()
+        label.text = "个人中心"
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.textColor = UIColor(white: 1.0, alpha: 0.0)
+        label.sizeToFit()
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,24 +31,24 @@ class ProfileViewController: UIViewController {
         
         setupUI()
     }
-
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//        print(tableView.contentInset)
-//    }
     
     //MARK: - 内部控制方法
     
     func setupNavigationBar(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        
+        navigationItem.titleView = titleLabel
     }
     
     func setupUI(){
         view.addSubview(tableView)
         
         view.addSubview(headerView)
+        headerView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(headerViewHeight)
+        }
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "\(UITableViewCell.self)")
         
@@ -46,7 +56,7 @@ class ProfileViewController: UIViewController {
     }
     
     //MARK: - 懒加载
-    fileprivate lazy var headerView = HeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerViewHeight))
+    fileprivate lazy var headerView : HeaderView = HeaderView()
     
     private lazy var tableView : UITableView = {
        let tv = UITableView(frame: UIScreen.main.bounds, style: .plain)
@@ -80,10 +90,33 @@ extension ProfileViewController : UITableViewDelegate , UITableViewDataSource{
         if h < navigationStatusBarHeight {
             h = navigationStatusBarHeight
         }
+        
+//        print(h)
+
         //4.设置头部视图的高度
-        headerView.frame.size.height = h
+        headerView.snp.updateConstraints { (make) in
+            make.height.equalTo(h)
+        }
         
-        print(h)
+        //计算alpha值
+        var alpha = delatOffset / (headerViewHeight - navigationStatusBarHeight)
         
+        if alpha > 1.0 {
+            alpha = 1.0
+        }
+        
+        setNavigationBackButton(alpha >= 1.0)
+        
+        print(alpha)
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage.imageWithColor(color: UIColor(white: 1.0, alpha: alpha)), for: .default)
+        titleLabel.textColor = UIColor(white: 0.0, alpha: alpha)
     }
+    
+    func setNavigationBackButton(_ isSelected : Bool){
+        let navi = navigationController as? IPNavigationViewController
+        
+        navi?.backButton.isSelected = isSelected
+    }
+    
 }
