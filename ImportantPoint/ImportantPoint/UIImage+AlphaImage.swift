@@ -10,6 +10,7 @@ import UIKit
 
 extension UIImage{
     
+    ///根据颜色值生成一张图片
     class func imageWithColor(color : UIColor) -> UIImage {
         
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)

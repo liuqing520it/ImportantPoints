@@ -12,7 +12,6 @@ let headerViewHeight : CGFloat = 200
 
 class ProfileViewController: UIViewController {
 
-    
     fileprivate lazy var titleLabel : UILabel = {
         let label = UILabel()
         label.text = "个人中心"
@@ -33,14 +32,14 @@ class ProfileViewController: UIViewController {
     }
     
     //MARK: - 内部控制方法
-    
+    ///设置导航栏
     func setupNavigationBar(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
         navigationItem.titleView = titleLabel
     }
-    
+    ///添加子视图
     func setupUI(){
         view.addSubview(tableView)
         
@@ -49,7 +48,6 @@ class ProfileViewController: UIViewController {
             make.left.right.equalToSuperview()
             make.height.equalTo(headerViewHeight)
         }
-        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "\(UITableViewCell.self)")
         
         tableView.contentInset = UIEdgeInsets(top: headerViewHeight, left: 0, bottom: 0, right: 0)
@@ -66,6 +64,7 @@ class ProfileViewController: UIViewController {
     }()
 }
 
+//MARK: - tableView代理方法和数据源方法
 extension ProfileViewController : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
@@ -78,6 +77,7 @@ extension ProfileViewController : UITableViewDelegate , UITableViewDataSource{
         return cell
     }
     
+    ///监听滚动
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         //1.取出 tableview的内边距
@@ -90,10 +90,8 @@ extension ProfileViewController : UITableViewDelegate , UITableViewDataSource{
         if h < navigationStatusBarHeight {
             h = navigationStatusBarHeight
         }
-        
-//        print(h)
 
-        //4.设置头部视图的高度
+        //4.更改头部视图的高度
         headerView.snp.updateConstraints { (make) in
             make.height.equalTo(h)
         }
@@ -107,15 +105,14 @@ extension ProfileViewController : UITableViewDelegate , UITableViewDataSource{
         
         setNavigationBackButton(alpha >= 1.0)
         
-        print(alpha)
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage.imageWithColor(color: UIColor(white: 1.0, alpha: alpha)), for: .default)
+        navigationController?.navigationBar
+        .setBackgroundImage(UIImage.imageWithColor(color: UIColor(white: 1.0, alpha: alpha)), for: .default)
         titleLabel.textColor = UIColor(white: 0.0, alpha: alpha)
     }
     
+    ///设置导航栏返回按钮
     func setNavigationBackButton(_ isSelected : Bool){
         let navi = navigationController as? IPNavigationViewController
-        
         navi?.backButton.isSelected = isSelected
     }
     
