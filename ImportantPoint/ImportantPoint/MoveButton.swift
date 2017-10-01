@@ -39,12 +39,9 @@ class MoveButton: UIButton {
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        
-        print("11111111\(point)")
         ///将点击的点转换为子控件所在的坐标系
         let childPoint = convert(point, to: childButton)
-        
-        print("2222222\(childPoint)")
+
         ///判断点击的这个点是否在 子控件的身上 
         ///如果在 就返回子类
         if childButton.point(inside: childPoint, with: event) {
