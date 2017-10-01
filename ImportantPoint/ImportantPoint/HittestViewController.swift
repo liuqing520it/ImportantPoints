@@ -30,7 +30,7 @@ class HittestViewController: UIViewController {
     }
     
     
-    func btnClick(sender:UIButton){
+    @objc func btnClick(sender:UIButton){
         
         sender.isSelected = !sender.isSelected
         

@@ -24,7 +24,12 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        automaticallyAdjustsScrollViewInsets = false
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior =  UIScrollViewContentInsetAdjustmentBehavior.never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+            
+        }
         
         setupNavigationBar()
         
