@@ -10,9 +10,11 @@ import UIKit
 
 class NSKVONotifyingSon: Person {
 
-    override var name: String?{
+    override dynamic var name: String?{
         didSet{
+            // 获取观察者
             let obs = objc_getAssociatedObject(self, observerKey) as? NSObject
+            // 通知观察者调用observeValueForKeyPath
             obs?.observeValue(forKeyPath: "name", of: self, change: nil, context: nil)
         }
     }
