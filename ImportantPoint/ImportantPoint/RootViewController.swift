@@ -12,6 +12,7 @@ enum ControllersTag : Int{
     case hitTestController = 234
     case threadController
     case profileController
+    case kvoController
 }
 
 class RootViewController: UIViewController {
@@ -30,7 +31,7 @@ class RootViewController: UIViewController {
         let originX : CGFloat = 20
         let btnW = UIScreen.main.bounds.size.width - originX * 2
         
-        let titleArray = ["hittest应用","多线程应用","个人中心展示"]
+        let titleArray = ["hittest应用","多线程应用","个人中心展示","KVO底层"]
         
         for i in 0..<titleArray.count {
             originY = 84 + (btnH + 20) * CGFloat(i)
@@ -57,6 +58,9 @@ class RootViewController: UIViewController {
         }
         else if btn.tag == ControllersTag.profileController.rawValue{
             navigationController?.pushViewController(ProfileViewController(), animated: true)
+        }
+        else if btn.tag == ControllersTag.kvoController.rawValue{
+            navigationController?.pushViewController(KVOViewController(), animated: true)
         }
     }
     

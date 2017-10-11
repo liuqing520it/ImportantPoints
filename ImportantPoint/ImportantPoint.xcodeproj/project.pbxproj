@@ -11,6 +11,7 @@
 		49355C8A1F6D15F0009D2F3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49355C891F6D15F0009D2F3F /* Assets.xcassets */; };
 		49355C951F6D1949009D2F3F /* HittestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49355C941F6D1949009D2F3F /* HittestViewController.swift */; };
 		49355C971F6D2093009D2F3F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49355C961F6D2093009D2F3F /* RootViewController.swift */; };
+		495115FC1F8E68E000429417 /* NSKVONotifyingSon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495115FB1F8E68E000429417 /* NSKVONotifyingSon.swift */; };
 		4957354F1F72A741004EC015 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957354E1F72A741004EC015 /* ProfileViewController.swift */; };
 		495735511F72A758004EC015 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495735501F72A758004EC015 /* HeaderView.swift */; };
 		495735541F72B7F9004EC015 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495735531F72B7F9004EC015 /* UIColor+Extension.swift */; };
@@ -21,6 +22,9 @@
 		49D56D791F6D6BFC00887FCA /* qiuqiu.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 49D56D781F6D6BFC00887FCA /* qiuqiu.jpeg */; };
 		49D56D7B1F6D6C1300887FCA /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D56D7A1F6D6C1300887FCA /* 12.png */; };
 		49D56D7E1F6E022300887FCA /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D56D7D1F6E022300887FCA /* ThreadViewController.swift */; };
+		49E972921F8E57380087AE12 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E972911F8E57380087AE12 /* KVOViewController.swift */; };
+		49E972961F8E587F0087AE12 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E972951F8E587F0087AE12 /* Person.swift */; };
+		49E972981F8E58A70087AE12 /* NSObject+KVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E972971F8E58A70087AE12 /* NSObject+KVO.swift */; };
 		A88509068C55FBD1FCF1D091 /* Pods_ImportantPoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD2F3C12D8453FE231A167F /* Pods_ImportantPoint.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +37,7 @@
 		49355C8E1F6D15F0009D2F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49355C941F6D1949009D2F3F /* HittestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HittestViewController.swift; sourceTree = "<group>"; };
 		49355C961F6D2093009D2F3F /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		495115FB1F8E68E000429417 /* NSKVONotifyingSon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSKVONotifyingSon.swift; sourceTree = "<group>"; };
 		4957354E1F72A741004EC015 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		495735501F72A758004EC015 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		495735531F72B7F9004EC015 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -43,6 +48,9 @@
 		49D56D781F6D6BFC00887FCA /* qiuqiu.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qiuqiu.jpeg; sourceTree = "<group>"; };
 		49D56D7A1F6D6C1300887FCA /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
 		49D56D7D1F6E022300887FCA /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
+		49E972911F8E57380087AE12 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
+		49E972951F8E587F0087AE12 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		49E972971F8E58A70087AE12 /* NSObject+KVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+KVO.swift"; sourceTree = "<group>"; };
 		7DD2F3C12D8453FE231A167F /* Pods_ImportantPoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImportantPoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +102,7 @@
 				4957354D1F72A67E004EC015 /* UserCenter */,
 				49D56D7C1F6E01EF00887FCA /* Thread */,
 				49D56D731F6D36D200887FCA /* Hittest */,
+				49E972901F8E55A90087AE12 /* KVO */,
 				49355C891F6D15F0009D2F3F /* Assets.xcassets */,
 				49D56D7A1F6D6C1300887FCA /* 12.png */,
 				49D56D781F6D6BFC00887FCA /* qiuqiu.jpeg */,
@@ -144,6 +153,17 @@
 				49D56D7D1F6E022300887FCA /* ThreadViewController.swift */,
 			);
 			name = Thread;
+			sourceTree = "<group>";
+		};
+		49E972901F8E55A90087AE12 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				49E972911F8E57380087AE12 /* KVOViewController.swift */,
+				49E972951F8E587F0087AE12 /* Person.swift */,
+				495115FB1F8E68E000429417 /* NSKVONotifyingSon.swift */,
+				49E972971F8E58A70087AE12 /* NSObject+KVO.swift */,
+			);
+			name = KVO;
 			sourceTree = "<group>";
 		};
 		92AABA2CB0ADB620C1EC5576 /* Pods */ = {
@@ -283,12 +303,16 @@
 				49355C831F6D15F0009D2F3F /* AppDelegate.swift in Sources */,
 				49D56D7E1F6E022300887FCA /* ThreadViewController.swift in Sources */,
 				495735541F72B7F9004EC015 /* UIColor+Extension.swift in Sources */,
+				49E972961F8E587F0087AE12 /* Person.swift in Sources */,
 				49D56D771F6D388400887FCA /* HittestView.swift in Sources */,
+				495115FC1F8E68E000429417 /* NSKVONotifyingSon.swift in Sources */,
+				49E972921F8E57380087AE12 /* KVOViewController.swift in Sources */,
 				4957354F1F72A741004EC015 /* ProfileViewController.swift in Sources */,
 				495735561F735AF8004EC015 /* UIImage+AlphaImage.swift in Sources */,
 				49D56D751F6D36E900887FCA /* MoveButton.swift in Sources */,
 				49355C971F6D2093009D2F3F /* RootViewController.swift in Sources */,
 				495735591F7361FC004EC015 /* IPNavigationViewController.swift in Sources */,
+				49E972981F8E58A70087AE12 /* NSObject+KVO.swift in Sources */,
 				495735511F72A758004EC015 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
