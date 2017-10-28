@@ -13,6 +13,7 @@ enum ControllersTag : Int{
     case threadController
     case profileController
     case kvoController
+    case productsList
 }
 
 class RootViewController: UIViewController {
@@ -31,7 +32,7 @@ class RootViewController: UIViewController {
         let originX : CGFloat = 20
         let btnW = UIScreen.main.bounds.size.width - originX * 2
         
-        let titleArray = ["hittest应用","多线程应用","个人中心展示","KVO底层"]
+        let titleArray = ["hittest应用","多线程应用","个人中心展示","KVO底层","商品列表"]
         
         for i in 0..<titleArray.count {
             originY = 84 + (btnH + 20) * CGFloat(i)
@@ -61,6 +62,9 @@ class RootViewController: UIViewController {
         }
         else if btn.tag == ControllersTag.kvoController.rawValue{
             navigationController?.pushViewController(KVOViewController(), animated: true)
+        }
+        else if btn.tag == ControllersTag.productsList.rawValue{
+            navigationController?.pushViewController(ProductListViewController(), animated: true)
         }
     }
     
