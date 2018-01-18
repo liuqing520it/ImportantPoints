@@ -29,5 +29,4 @@ extension UIImage{
         
         return image!
     }
-    
 }
